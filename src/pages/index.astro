@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import Portfolio from '../components/Portfolio.astro';
+import CTA from '../components/CTA.astro';
+
+// Metadata pour le SEO
+const title = "Cheminées Lille | Expert en Installation et Rénovation de Cheminées";
+const description = "Spécialiste de l'installation et rénovation de cheminées à Lille. Plus de 20 ans d'expertise, devis gratuit. Créez une atmosphère chaleureuse avec nos solutions sur mesure.";
+---
+
+<Layout {title} {description}>
+	<Navigation />
+	<main class="overflow-hidden">
+		<!-- Hero Section avec vidéo -->
+		<Hero />
+		
+		<!-- À Propos - Notre Histoire -->
+		<About />
+		
+		<!-- Nos Services -->
+		<Services />
+
+		<!-- Call-to-Action Principal -->
+		<CTA />
+
+		<!-- Nos Réalisations -->
+		<Portfolio />
+		
+		<!-- Contact -->
+		<Contact />
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	main {
+		@apply relative;
+	}
+
+	section {
+		@apply py-16 md:py-24;
+	}
+</style>

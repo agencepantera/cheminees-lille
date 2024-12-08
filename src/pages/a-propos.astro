@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+const title = "À Propos de Cheminées Lille | Votre Expert en Cheminées";
+const description = "Découvrez l'histoire, l'expertise et l'engagement de Cheminées Lille. Plus de 20 ans d'expérience dans l'installation et la rénovation de cheminées à Lille.";
+---
+
+<Layout title={title} description={description}>
+    <!-- Hero Section -->
+    <section class="relative bg-gray-900 text-white py-24 md:py-32">
+        <div class="absolute inset-0 bg-[url('/images/about-hero.jpg')] bg-cover bg-center opacity-40"></div>
+        <div class="relative container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-center">Notre Histoire</h1>
+            <p class="text-xl text-center max-w-3xl mx-auto">
+                Plus de deux décennies d'expertise au service de votre confort
+            </p>
+        </div>
+    </section>
+
+    <!-- Notre Histoire -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Notre Passion pour les Cheminées</h2>
+                    <p class="text-gray-600 mb-4">
+                        Depuis notre création en 2000, Cheminées Lille s'est imposée comme le leader régional dans l'installation et la rénovation de cheminées. Notre histoire est celle d'une passion transmise de génération en génération.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        Notre entreprise familiale a su évoluer avec son temps, en intégrant les dernières technologies tout en préservant les techniques traditionnelles qui ont fait leurs preuves.
+                    </p>
+                    <p class="text-gray-600">
+                        Aujourd'hui, nous sommes fiers de compter plus de 1000 clients satisfaits dans la région lilloise et ses environs.
+                    </p>
+                </div>
+                <div class="relative h-[400px]">
+                    <div class="absolute inset-0 bg-[url('/images/about-story.jpg')] bg-cover bg-center rounded-lg shadow-xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Valeurs -->
+    <section class="bg-gray-50 py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Nos Valeurs</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Excellence</h3>
+                    <p class="text-gray-600 text-center">
+                        Nous nous engageons à fournir un travail de la plus haute qualité, en utilisant les meilleurs matériaux et techniques.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Service Client</h3>
+                    <p class="text-gray-600 text-center">
+                        La satisfaction de nos clients est notre priorité absolue. Nous sommes à votre écoute à chaque étape de votre projet.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Innovation</h3>
+                    <p class="text-gray-600 text-center">
+                        Nous restons à la pointe des dernières innovations tout en respectant les traditions artisanales.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre Équipe -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Notre Équipe</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-48 h-48 rounded-full bg-[url('/images/team-1.jpg')] bg-cover bg-center mx-auto mb-6"></div>
+                    <h3 class="text-xl font-semibold mb-2">Pierre Dubois</h3>
+                    <p class="text-gray-600">Fondateur & Expert Cheministe</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-48 h-48 rounded-full bg-[url('/images/team-2.jpg')] bg-cover bg-center mx-auto mb-6"></div>
+                    <h3 class="text-xl font-semibold mb-2">Marie Laurent</h3>
+                    <p class="text-gray-600">Responsable Technique</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-48 h-48 rounded-full bg-[url('/images/team-3.jpg')] bg-cover bg-center mx-auto mb-6"></div>
+                    <h3 class="text-xl font-semibold mb-2">Thomas Martin</h3>
+                    <p class="text-gray-600">Expert Installation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="bg-gray-50 py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Nos Certifications</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="w-24 h-24 mx-auto mb-4">
+                        <img src="/images/certification-1.png" alt="Certification RGE" class="w-full h-full object-contain" />
+                    </div>
+                    <h3 class="font-semibold">Certification RGE</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="w-24 h-24 mx-auto mb-4">
+                        <img src="/images/certification-2.png" alt="Qualibois" class="w-full h-full object-contain" />
+                    </div>
+                    <h3 class="font-semibold">Qualibois</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="w-24 h-24 mx-auto mb-4">
+                        <img src="/images/certification-3.png" alt="Artisan Certifié" class="w-full h-full object-contain" />
+                    </div>
+                    <h3 class="font-semibold">Artisan Certifié</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="w-24 h-24 mx-auto mb-4">
+                        <img src="/images/certification-4.png" alt="Label Qualité" class="w-full h-full object-contain" />
+                    </div>
+                    <h3 class="font-semibold">Label Qualité</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

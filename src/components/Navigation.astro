@@ -1,0 +1,160 @@
+---
+const navItems = [
+  { name: 'Accueil', href: '/' },
+  { 
+    name: 'Services', 
+    href: '#',
+    submenu: [
+      { name: 'Installation cheminées et poêles', href: '/services/installation-cheminees-poeles' },
+      { name: 'Rénovation', href: '/services/renovation-cheminees' },
+      { name: 'Entretien', href: '/services/entretien-cheminees' },
+      { name: 'Conseil', href: '/services/conseil-cheminees' }
+    ]
+  },
+  { name: 'Réalisations', href: '#portfolio' },
+  { name: 'À propos', href: '/a-propos' },
+  { name: 'Contact', href: '/contact' },
+];
+---
+
+<header class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+  <nav class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <a href="/" class="text-2xl font-heading font-bold text-dark">
+        Cheminées Lille
+      </a>
+
+      <!-- Mobile menu button -->
+      <button
+        id="menu-toggle"
+        class="md:hidden p-2 rounded-lg hover:bg-gray-100"
+        aria-label="Toggle menu"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Desktop menu -->
+      <div class="hidden md:flex items-center space-x-8">
+        {
+          navItems.map((item) => (
+            item.submenu ? (
+              <div class="relative group">
+                <button class="text-gray-600 hover:text-primary transition-colors duration-300 flex items-center">
+                  {item.name}
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                  <div class="py-2">
+                    {item.submenu.map((subItem) => (
+                      <a
+                        href={subItem.href}
+                        class="block px-4 py-2 text-gray-600 hover:text-primary hover:bg-gray-50"
+                      >
+                        {subItem.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <a
+                href={item.href}
+                class="text-gray-600 hover:text-primary transition-colors duration-300"
+              >
+                {item.name}
+              </a>
+            )
+          ))
+        }
+        <a
+          href="#contact"
+          class="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors duration-300"
+        >
+          Devis gratuit
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden mt-4 py-4 border-t border-gray-100"
+    >
+      <div class="flex flex-col space-y-4">
+        {
+          navItems.map((item) => (
+            item.submenu ? (
+              <div class="space-y-2">
+                <button 
+                  class="text-gray-600 hover:text-primary transition-colors duration-300 flex items-center justify-between w-full"
+                  onclick="this.nextElementSibling.classList.toggle('hidden')"
+                >
+                  {item.name}
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div class="hidden pl-4 space-y-2">
+                  {item.submenu.map((subItem) => (
+                    <a
+                      href={subItem.href}
+                      class="block text-gray-600 hover:text-primary transition-colors duration-300"
+                    >
+                      {subItem.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <a
+                href={item.href}
+                class="text-gray-600 hover:text-primary transition-colors duration-300"
+              >
+                {item.name}
+              </a>
+            )
+          ))
+        }
+        <a
+          href="#contact"
+          class="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors duration-300 text-center"
+        >
+          Devis gratuit
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuToggle?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Fermer le menu mobile lors du clic sur un lien
+  const mobileLinks = mobileMenu?.getElementsByTagName('a');
+  if (mobileLinks) {
+    Array.from(mobileLinks).forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.add('hidden');
+      });
+    });
+  }
+</script>
