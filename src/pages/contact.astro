@@ -1,12 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 
 const title = "Contact | Cheminées Lille";
 const description = "Contactez Cheminées Lille pour tous vos projets d'installation, rénovation ou entretien de cheminées. Devis gratuit et conseil personnalisé.";
 ---
 
 <Layout title={title} description={description}>
+    <Navigation />
     <!-- Hero Section -->
     <section class="relative bg-gray-900 text-white py-24 md:py-32">
         <div class="absolute inset-0 bg-[url('/images/contact-hero.jpg')] bg-cover bg-center opacity-40"></div>
@@ -174,6 +177,7 @@ const description = "Contactez Cheminées Lille pour tous vos projets d'installa
             </div>
         </div>
     </section>
+    <Footer />
 </Layout>
 
 <script>
