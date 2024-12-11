@@ -1,71 +1,15 @@
 ---
-const realisations = [
-    {
-        title: "Cheminée Contemporaine",
-        description: "Installation d'une cheminée moderne dans un loft",
-        category: "Installation",
-        image: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&q=80&w=1470",
-        tags: ["Design", "Moderne", "Sur-mesure"]
-    },
-    {
-        title: "Rénovation Classique",
-        description: "Restauration d'une cheminée d'époque",
-        category: "Rénovation",
-        image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1470",
-        tags: ["Traditionnel", "Restauration", "Pierre"]
-    },
-    {
-        title: "Insert Haute Performance",
-        description: "Installation d'un insert dernière génération",
-        category: "Installation",
-        image: "https://images.unsplash.com/photo-1601244005535-a48d21d951ac?auto=format&fit=crop&q=80",
-        tags: ["Économique", "Écologique", "Moderne"]
-    },
-    {
-        title: "Cheminée d'Extérieur",
-        description: "Création d'un espace détente en extérieur",
-        category: "Installation",
-        image: "https://images.unsplash.com/photo-1593604572577-1c6c44fa246c?auto=format&fit=crop&q=80",
-        tags: ["Extérieur", "Design", "Convivial"]
-    },
-    {
-        title: "Poêle à Bois Design",
-        description: "Installation d'un poêle à bois contemporain",
-        category: "Installation",
-        image: "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&q=80&w=1470",
-        tags: ["Design", "Efficace", "Compact"]
-    },
-    {
-        title: "Cheminée Art Déco",
-        description: "Rénovation d'une cheminée style art déco",
-        category: "Rénovation",
-        image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1469",
-        tags: ["Art Déco", "Restauration", "Luxe"]
-    },
-    {
-        title: "Poêle Scandinave",
-        description: "Installation d'un poêle style nordique",
-        category: "Installation",
-        image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1469",
-        tags: ["Scandinave", "Moderne", "Efficace"]
-    },
-    {
-        title: "Cheminée Rustique",
-        description: "Rénovation d'une cheminée de ferme",
-        category: "Rénovation",
-        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1470",
-        tags: ["Rustique", "Pierre", "Authentique"]
-    },
-    {
-        title: "Insert Contemporain",
-        description: "Modernisation avec insert design",
-        category: "Installation",
-        image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=80&w=1469",
-        tags: ["Design", "Moderne", "Performance"]
-    }
+const images = [
+    "/images/cheminee-contemporaine-design.webp",
+    "/images/cheminee-pierre-renovation.webp",
+    "/images/insert-cheminee-moderne.webp",
+    "/images/foyer-ouvert-cheminee.webp",
+    "/images/installation-insert-cheminee.webp",
+    "/images/cheminee-ancienne-restauree.webp",
+    "/images/cheminee-traditionnelle-nord.webp",
+    "/images/renovation-cheminee-lille.webp",
+    "/images/conduit-cheminee-inspection.webp"
 ];
-
-const categories = ["Tous", ...new Set(realisations.map(item => item.category))];
 ---
 
 <section id="portfolio" class="py-16 md:py-24 bg-gray-50">
@@ -77,89 +21,23 @@ const categories = ["Tous", ...new Set(realisations.map(item => item.category))]
             </p>
         </div>
 
-        <!-- Filtres -->
-        <div class="flex flex-wrap justify-center gap-4 mb-12" id="filters">
-            {categories.map(category => (
-                <button
-                    class="px-6 py-2 rounded-full border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
-                    data-category={category}
-                >
-                    {category}
-                </button>
-            ))}
-        </div>
-
         <!-- Galerie -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery">
-            {realisations.map((item) => (
-                <div 
-                    class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 portfolio-item"
-                    data-category={item.category}
-                >
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {images.map((image) => (
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                     <div class="relative h-80">
                         <img
-                            src={item.image}
-                            alt={item.title}
+                            src={image}
+                            alt="Réalisation Cheminées Lille"
                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="absolute inset-0 flex flex-col justify-end p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
-                        <h3 class="text-2xl font-semibold text-white mb-2">{item.title}</h3>
-                        <p class="text-gray-200 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                            {item.description}
-                        </p>
-                        <div class="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
-                            {item.tags.map(tag => (
-                                <span class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white">
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                 </div>
             ))}
         </div>
     </div>
 </section>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const filters = document.querySelectorAll('#filters button');
-    const items = document.querySelectorAll('.portfolio-item');
-    
-    // Activer le filtre "Tous" par défaut
-    filters[0].classList.add('bg-orange-500', 'text-white');
-    
-    filters.forEach(filter => {
-        filter.addEventListener('click', () => {
-            // Mettre à jour l'état actif des filtres
-            filters.forEach(f => {
-                f.classList.remove('bg-orange-500', 'text-white');
-            });
-            filter.classList.add('bg-orange-500', 'text-white');
-            
-            const category = filter.dataset.category;
-            
-            items.forEach(item => {
-                if (category === 'Tous' || item.dataset.category === category) {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'scale(1)';
-                    }, 50);
-                } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'scale(0.8)';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
-                }
-            });
-        });
-    });
-});
-</script>
 
 <style>
 .portfolio-item {
