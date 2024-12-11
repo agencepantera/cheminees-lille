@@ -28,7 +28,7 @@ const description = "Contactez Cheminées Lille pour tous vos projets d'installa
                 <!-- Contact Form -->
                 <div class="bg-white p-8 rounded-lg shadow-lg">
                     <h2 class="text-2xl font-bold mb-6">Envoyez-nous un message</h2>
-                    <form id="contact-form" class="space-y-6">
+                    <form id="contact-form" class="space-y-6" action="https://formspree.io/f/manyzlkk" method="POST">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
                             <input
@@ -179,22 +179,3 @@ const description = "Contactez Cheminées Lille pour tous vos projets d'installa
     </section>
     <Footer />
 </Layout>
-
-<script>
-document.getElementById('contact-form')?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Récupération des données du formulaire
-    const formData = new FormData(e.target as HTMLFormElement);
-    const data = Object.fromEntries(formData);
-    
-    // Ici, vous pouvez ajouter la logique d'envoi du formulaire
-    console.log('Données du formulaire:', data);
-    
-    // Exemple de message de succès (à personnaliser selon vos besoins)
-    alert('Votre message a été envoyé avec succès ! Nous vous recontacterons dans les plus brefs délais.');
-    
-    // Réinitialisation du formulaire
-    (e.target as HTMLFormElement).reset();
-});
-</script>
